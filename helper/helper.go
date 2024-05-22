@@ -67,3 +67,15 @@ func Ask() bool {
 		return false
 	}
 }
+
+func StringToBool(str string) (bool, error) {
+	str = strings.TrimSpace(strings.ToLower(str))
+	switch str {
+	case "true", "1", "yes", "y":
+		return true, nil
+	case "false", "0", "no", "n":
+		return false, nil
+	default:
+		return false, fmt.Errorf("cannot convert %s to bool", str)
+	}
+}
