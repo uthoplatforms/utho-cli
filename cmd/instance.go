@@ -141,9 +141,7 @@ var deleteCloudInstanceCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		tbl := table.New("Status")
-		tbl.AddRow(instance.Status)
-		tbl.Print()
+		fmt.Println("Status: " + instance.Status)
 	},
 }
 
@@ -199,9 +197,7 @@ var deleteSnapshotCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		tbl := table.New("Status")
-		tbl.AddRow(instance.Status)
-		tbl.Print()
+		fmt.Println("Status: " + instance.Status)
 	},
 }
 
@@ -258,9 +254,7 @@ var disableBackupCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		tbl := table.New("Status")
-		tbl.AddRow(instance.Status)
-		tbl.Print()
+		fmt.Println("Status: " + instance.Status)
 	},
 }
 

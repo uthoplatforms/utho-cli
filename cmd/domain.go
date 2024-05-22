@@ -109,9 +109,7 @@ var deleteDomainCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		tbl := table.New("Status")
-		tbl.AddRow(domain.Status)
-		tbl.Print()
+		fmt.Println("Status: " + domain.Status)
 	},
 }
 
