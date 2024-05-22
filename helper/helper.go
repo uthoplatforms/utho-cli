@@ -1,11 +1,15 @@
 package helper
 
 import (
+	"bufio"
+	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/spf13/viper"
+	"github.com/uthoplatforms/utho-go/utho"
 )
 
 func SaveToken(token string) {
@@ -31,4 +35,35 @@ func SaveToken(token string) {
 	}
 
 	fmt.Println("Token saved successfully at", configFile)
+}
+
+func NewUthoClient() (utho.Client, error) {
+	token := viper.GetString("token")
+	if token == "" {
+		return nil, errors.New("no token found. please login first")
+	}
+
+	clinet, err := utho.NewClient(token)
+	if err != nil {
+		return nil, err
+	}
+	return clinet, err
+}
+
+func Ask() bool {
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Print("Are you sure you want to proceed? (y/n): ")
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		fmt.Println("Error reading input:", err)
+		os.Exit(1)
+	}
+
+	input = strings.TrimSpace(input)
+	if strings.ToLower(input) == "y" {
+		return true
+	} else {
+		return false
+	}
 }
