@@ -1,3 +1,8 @@
+.PHONY: publish
+publish: tidy
+	git tag v$(tag)
+	git push origin v$(tag)
+
 .PHONY: test
 test:
 	go test -v ./...
