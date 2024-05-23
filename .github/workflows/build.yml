@@ -1,0 +1,33 @@
+name: release uthoctl
+
+on:
+  push:
+    tags:
+      - "v[1-9].[0-9]+.[0-9]+"
+
+jobs:
+  github-release:
+    name: "GitHub Release"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # https://github.com/marketplace/actions/goreleaser-action#usage
+          # note the fetch-depth: 0 input in Checkout step. It is required for
+          # the changelog to work correctly
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.21.6
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v5
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
