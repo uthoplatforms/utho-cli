@@ -20,7 +20,7 @@ var instanceCmd = &cobra.Command{
 
 var createCloudInstanceCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create an compute instance.",
+	Short: "Create a compute instance.",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		client, err := helper.NewUthoClient()

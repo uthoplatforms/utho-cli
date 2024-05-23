@@ -105,7 +105,7 @@ var deleteVpcCmd = &cobra.Command{
 	Use:     "delete",
 	Short:   "delete a vpc from your account.",
 	Example: "uthoctl vpc delete <vpc-id>",
-	Args:    cobra.ExactArgs(2),
+	Args:    cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		confirm := helper.Ask()
 		if !confirm {

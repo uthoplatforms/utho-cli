@@ -217,7 +217,7 @@ var listFirewallruleCmd = &cobra.Command{
 
 var deleteFirewallruleCmd = &cobra.Command{
 	Use:     "delete",
-	Short:   "delete an firewall policy from your account.",
+	Short:   "delete a firewall policy from your account.",
 	Example: "uthoctl firewall firewallrule delete <firewall-id> <firewallrule-id>",
 	Args:    cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
