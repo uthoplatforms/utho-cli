@@ -101,7 +101,7 @@ var deleteLoadbalancerCmd = &cobra.Command{
 	Use:     "delete",
 	Short:   "delete a loadbalancer from your account.",
 	Example: "uthoctl loadbalancer delete <loadbalancer-id>",
-	Args:    cobra.ExactArgs(2),
+	Args:    cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		confirm := helper.Ask()
 		if !confirm {
