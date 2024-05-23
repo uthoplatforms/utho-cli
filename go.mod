@@ -7,7 +7,7 @@ require (
 	github.com/rodaine/table v1.2.0
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.18.2
-	github.com/uthoplatforms/utho-go v0.1.13
+	github.com/uthoplatforms/utho-go v0.1.14
 	golang.org/x/term v0.20.0
 )
 
