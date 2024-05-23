@@ -406,7 +406,7 @@ var deleteScheduleCmd = &cobra.Command{
 }
 
 // Loadbalancer
-var loadbalancerCmd = &cobra.Command{
+var autoscalingLoadbalancerCmd = &cobra.Command{
 	Use:   "loadbalancer",
 	Short: "Use this command to manage autoscalings Load Balancer.",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -414,7 +414,7 @@ var loadbalancerCmd = &cobra.Command{
 	},
 }
 
-var createLoadbalancerCmd = &cobra.Command{
+var createAutoscalingLoadbalancerCmd = &cobra.Command{
 	Use:     "create",
 	Short:   "Create an autoscaling loadbalancer.",
 	Example: "uthoctl autoscaling loadbalancer create <autoscaling-id> <loadbalancer-id>",
@@ -442,7 +442,7 @@ var createLoadbalancerCmd = &cobra.Command{
 	},
 }
 
-var getLoadbalancerCmd = &cobra.Command{
+var getAutoscalingLoadbalancerCmd = &cobra.Command{
 	Use:     "get",
 	Short:   "Get autoscaling loadbalancer info",
 	Example: "uthoctl autoscaling loadbalancer get <autoscaling-id> <loadbalancer-id",
@@ -465,7 +465,7 @@ var getLoadbalancerCmd = &cobra.Command{
 	},
 }
 
-var listLoadbalancerCmd = &cobra.Command{
+var listAutoscalingLoadbalancerCmd = &cobra.Command{
 	Use:     "list",
 	Short:   "List autoscaling Loadbalancer",
 	Example: "uthoctl autoscaling loadbalancer list <autoscaling-id>",
@@ -490,7 +490,7 @@ var listLoadbalancerCmd = &cobra.Command{
 	},
 }
 
-var deleteLoadbalancerCmd = &cobra.Command{
+var deleteAutoscalingLoadbalancerCmd = &cobra.Command{
 	Use:     "delete",
 	Short:   "delete an autoscaling policy from your account.",
 	Example: "uthoctl autoscaling loadbalancer delete <autoscaling-id> <loadbalancer-id>",
@@ -580,8 +580,8 @@ var getSecuritygroupCmd = &cobra.Command{
 
 var listSecuritygroupCmd = &cobra.Command{
 	Use:     "list",
-	Short:   "List autoscaling policy",
-	Example: "uthoctl autoscaling policy list <autoscaling-id>",
+	Short:   "List autoscaling securitygroup",
+	Example: "uthoctl autoscaling securitygroup list <autoscaling-id>",
 	Run: func(cmd *cobra.Command, args []string) {
 
 		client, err := helper.NewUthoClient()
@@ -605,7 +605,7 @@ var listSecuritygroupCmd = &cobra.Command{
 
 var deleteSecuritygroupCmd = &cobra.Command{
 	Use:     "delete",
-	Short:   "delete an autoscaling Securitygroup from your account.",
+	Short:   "delete an autoscaling سecuritygroup from your account.",
 	Example: "uthoctl autoscaling securitygroup delete <autoscaling-id> <securitygroup-id>",
 	Args:    cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
@@ -632,7 +632,7 @@ var deleteSecuritygroupCmd = &cobra.Command{
 }
 
 // Targetgroup
-var targetgroupCmd = &cobra.Command{
+var autoscalingtargetgroupCmd = &cobra.Command{
 	Use:   "targetgroup",
 	Short: "Use this command to manage autoscalings Target Group.",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -640,7 +640,7 @@ var targetgroupCmd = &cobra.Command{
 	},
 }
 
-var createTargetgroupCmd = &cobra.Command{
+var createAutoscalingTargetgroupCmd = &cobra.Command{
 	Use:     "create",
 	Short:   "Create an autoscaling targetgroup.",
 	Example: "uthoctl autoscaling targetgroup create <autoscaling-id> <targetgroup-id>",
@@ -668,7 +668,7 @@ var createTargetgroupCmd = &cobra.Command{
 	},
 }
 
-var getTargetgroupCmd = &cobra.Command{
+var getAutoscalingTargetgroupCmd = &cobra.Command{
 	Use:     "get",
 	Short:   "Get autoscaling targetgroup info",
 	Example: "uthoctl autoscaling targetgroup get <autoscaling-id> <targetgroup-id",
@@ -691,7 +691,7 @@ var getTargetgroupCmd = &cobra.Command{
 	},
 }
 
-var listTargetgroupCmd = &cobra.Command{
+var listAutoscalingTargetgroupCmd = &cobra.Command{
 	Use:     "list",
 	Short:   "List autoscaling policy",
 	Example: "uthoctl autoscaling policy list <autoscaling-id>",
@@ -716,7 +716,7 @@ var listTargetgroupCmd = &cobra.Command{
 	},
 }
 
-var deleteTargetgroupCmd = &cobra.Command{
+var deleteAutoscalingTargetgroupCmd = &cobra.Command{
 	Use:     "delete",
 	Short:   "delete an autoscaling Targetgroup from your account.",
 	Example: "uthoctl autoscaling targetgroup delete <autoscaling-id> <targetgroup-id>",
@@ -771,7 +771,7 @@ func init() {
 	// Policy
 	autoscalingCmd.AddCommand(policyCmd)
 	policyCmd.AddCommand(createPolicyCmd)
-	createPolicyCmd.Flags().String("dcslug", "", "")
+	createPolicyCmd.Flags().String("dcslug", "", "Provide Zone dcslug eg: innoida")
 	createPolicyCmd.Flags().String("type", "", "")
 	createPolicyCmd.Flags().String("compare", "", "")
 	createPolicyCmd.Flags().String("value", "", "")
@@ -796,11 +796,11 @@ func init() {
 	scheduleCmd.AddCommand(deleteScheduleCmd)
 
 	// Loadbalancer
-	autoscalingCmd.AddCommand(loadbalancerCmd)
-	loadbalancerCmd.AddCommand(createLoadbalancerCmd)
-	loadbalancerCmd.AddCommand(getLoadbalancerCmd)
-	loadbalancerCmd.AddCommand(listLoadbalancerCmd)
-	loadbalancerCmd.AddCommand(deleteLoadbalancerCmd)
+	autoscalingCmd.AddCommand(autoscalingLoadbalancerCmd)
+	autoscalingLoadbalancerCmd.AddCommand(createAutoscalingLoadbalancerCmd)
+	autoscalingLoadbalancerCmd.AddCommand(getAutoscalingLoadbalancerCmd)
+	autoscalingLoadbalancerCmd.AddCommand(listAutoscalingLoadbalancerCmd)
+	autoscalingLoadbalancerCmd.AddCommand(deleteAutoscalingLoadbalancerCmd)
 
 	// Securitygroup
 	autoscalingCmd.AddCommand(securitygroupCmd)
@@ -810,10 +810,9 @@ func init() {
 	securitygroupCmd.AddCommand(deleteSecuritygroupCmd)
 
 	// Targetgroup
-	autoscalingCmd.AddCommand(targetgroupCmd)
-	targetgroupCmd.AddCommand(createTargetgroupCmd)
-	targetgroupCmd.AddCommand(getTargetgroupCmd)
-	targetgroupCmd.AddCommand(listTargetgroupCmd)
-	targetgroupCmd.AddCommand(deleteTargetgroupCmd)
-
+	autoscalingCmd.AddCommand(autoscalingtargetgroupCmd)
+	autoscalingtargetgroupCmd.AddCommand(createAutoscalingTargetgroupCmd)
+	autoscalingtargetgroupCmd.AddCommand(getAutoscalingTargetgroupCmd)
+	autoscalingtargetgroupCmd.AddCommand(listAutoscalingTargetgroupCmd)
+	autoscalingtargetgroupCmd.AddCommand(deleteAutoscalingTargetgroupCmd)
 }
