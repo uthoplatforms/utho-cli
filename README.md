@@ -20,6 +20,12 @@ appropriate archive for your operating system and architecture.
 Download the archive from your browser or copy its URL and
 retrieve it to your home directory with `wget` or `curl`.
 
+### CLI Version
+where `<version>` is the full semantic version, e.g., `0.1.5`.
+
+You can get latest release from [Latest Releases
+page](https://github.com/uthoplatforms/utho-cli/releases/latest)
+
 ### Installation on Linux
 
 ```bash
@@ -51,18 +57,10 @@ sudo mv uthoctl /usr/local/bin
 ```bash
 curl -LO https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_windows_amd64.tar.gz
 ```
-
-where `<version>` is the full semantic version, e.g., `0.1.5`.
-
-On Windows systems, you should be able to double-click the zip archive to extract the `uthoctl` executable.
-
-Move the `uthoctl` binary to somewhere in your path. For example, on GNU/Linux and OS X systems:
-
-```
-sudo mv ~/uthoctl /usr/local/bin
-```
+You should be able to double-click the zip archive to extract the `uthoctl` executable.
 
 Windows users can follow [How to: Add Tool Locations to the PATH Environment Variable](https://msdn.microsoft.com/en-us/library/office/ee537574(v=office.14).aspx) in order to add `uthoctl` to their `PATH`.
+
 
 ## Authenticating with Utho
 
