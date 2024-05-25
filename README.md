@@ -20,32 +20,39 @@ appropriate archive for your operating system and architecture.
 Download the archive from your browser or copy its URL and
 retrieve it to your home directory with `wget` or `curl`.
 
-For example, with `wget`:
+### Installation on Linux
 
-```
-cd ~
-wget https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_linux_amd64.tar.gz
-```
-
-Or with `curl`:
-
-```
-cd ~
-curl -OL https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_linux_amd64.tar.gz
+```bash
+curl -LO https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_linux_amd64.tar.gz
+tar xf uthoctl_<version>_linux_amd64.tar.gz
+sudo mv uthoctl /usr/local/bin
 ```
 
-Extract the binary:
+### Installation on MacOS
 
-```
-tar xf ~/uthoctl-<version>-linux-amd64.tar.gz
+For x86 based Macs (intel cpu):
+
+```bash
+curl -LO https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_darwin_amd64.tar.gz
+tar xf uthoctl_<version>_darwin_amd64.tar.gz
+sudo mv uthoctl /usr/local/bin
 ```
 
-Or download and extract with this oneliner:
-```
-curl -sL https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_linux_amd64.tar.gz | tar -xzv
+For Apple Silicon (M1) based Macs:
+
+```bash
+curl -LO https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_darwin_arm64.tar.gz
+tar xf uthoctl_<version>_darwin_arm64.tar.gz
+sudo mv uthoctl /usr/local/bin
 ```
 
-where `<version>` is the full semantic version, e.g., `0.14.0`.
+### Installation on Windows
+
+```bash
+curl -LO https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_windows_amd64.tar.gz
+```
+
+where `<version>` is the full semantic version, e.g., `0.1.5`.
 
 On Windows systems, you should be able to double-click the zip archive to extract the `uthoctl` executable.
 
