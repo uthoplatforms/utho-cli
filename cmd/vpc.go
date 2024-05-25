@@ -12,7 +12,7 @@ import (
 
 var vpcCmd = &cobra.Command{
 	Use:   "vpc",
-	Short: "Use this command to manage object storages.",
+	Short: "Use this command to manage VPCs.",
 	Run: func(cmd *cobra.Command, args []string) {
 		cmd.Help()
 	},

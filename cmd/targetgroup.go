@@ -12,7 +12,7 @@ import (
 
 var targetgroupCmd = &cobra.Command{
 	Use:   "targetgroup",
-	Short: "Use this command to manage object storages.",
+	Short: "Use this command to manage target group.",
 	Run: func(cmd *cobra.Command, args []string) {
 		cmd.Help()
 	},

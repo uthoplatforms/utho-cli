@@ -12,7 +12,7 @@ import (
 
 var kubernetesCmd = &cobra.Command{
 	Use:   "kubernetes",
-	Short: "Use this command to manage kubernetes cluster.",
+	Short: "Use this command to manage kubernetes(k8s) cluster.",
 	Run: func(cmd *cobra.Command, args []string) {
 		cmd.Help()
 	},
