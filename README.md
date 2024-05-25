@@ -61,7 +61,7 @@ Windows users can follow [How to: Add Tool Locations to the PATH Environment Var
 
 To use `uthoctl`, you need to authenticate with Utho by providing a Personal Access Token (PAT) is the only method of
 authenticating with the API. You can manage your tokens
-at the Utho Control Panel [Applications Page](https://console.utho.com/api).
+at the Utho Control Panel [Applications Page](https://console.utho.com/switch/api).
 
 ```
 uthoctl auth
