@@ -78,14 +78,19 @@ You will be prompted to enter the Utho access token that you generated in the Ut
 
 ## Examples
 
-`uthoctl` is able to interact with your Utho resources. Below are a few common usage examples.
+`uthoctl` is able to interact with your Utho resources. Use `uthoctl --help` to get help about the CLI command. Below are a few common usage examples.
+
+* Create new Compute Instances on your account:
+```
+uthoctl instance create <instance-name> --dcslug <location-slug> --image <image-name> --planid <plane-id> --billingcycle <billing cycle>
+```
 
 * List all Compute Instances on your account:
 ```
 uthoctl instance list
 ```
 
-* Add new domain tp your account:
+* Add new domain to your account:
 ```
 uthoctl domain <domain-name>
 ```
@@ -93,4 +98,14 @@ uthoctl domain <domain-name>
 * Get information about your account:
 ```
 uthoctl account get
+```
+
+* Add new firewall to your account:
+```
+uthoctl firewall <firewall-name>
+```
+
+* Add new loadbalancer to your account:
+```
+uthoctl loadbalancer <loadbalancer-name> --dcslug <location-slug> --type <loadbalancer-type>
 ```
