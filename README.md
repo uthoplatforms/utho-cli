@@ -24,14 +24,14 @@ For example, with `wget`:
 
 ```
 cd ~
-wget https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl-<version>-linux-amd64.tar.gz
+wget https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_linux_amd64.tar.gz
 ```
 
 Or with `curl`:
 
 ```
 cd ~
-curl -OL https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl-<version>-linux-amd64.tar.gz
+curl -OL https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_linux_amd64.tar.gz
 ```
 
 Extract the binary:
@@ -42,10 +42,10 @@ tar xf ~/uthoctl-<version>-linux-amd64.tar.gz
 
 Or download and extract with this oneliner:
 ```
-curl -sL https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl-<version>-linux-amd64.tar.gz | tar -xzv
+curl -sL https://github.com/uthoplatforms/utho-cli/releases/download/v<version>/uthoctl_<version>_linux_amd64.tar.gz | tar -xzv
 ```
 
-where `<version>` is the full semantic version, e.g., `1.17.0`.
+where `<version>` is the full semantic version, e.g., `0.14.0`.
 
 On Windows systems, you should be able to double-click the zip archive to extract the `uthoctl` executable.
 
