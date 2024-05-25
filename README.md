@@ -76,7 +76,11 @@ You will be prompted to enter the Utho access token that you generated in the Ut
 
 ## Examples
 
-`uthoctl` is able to interact with your Utho resources. Use `uthoctl --help` to get help about the CLI command. Below are a few common usage examples.
+`uthoctl` is able to interact with your Utho resources. 
+
+Use `uthoctl --help` to get help about the CLI command. 
+
+Below are a few common usage examples.
 
 * Create new Compute Instances on your account:
 ```
